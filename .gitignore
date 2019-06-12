@@ -1,0 +1,7 @@
+# FILE
+.DS_Store
+.vscode
+yarn-*
+npm-*
+# FOLDER
+/node_modules/

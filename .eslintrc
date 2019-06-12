@@ -1,0 +1,112 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    // 全局变量(添加webpack里定义的ProvidePlugin和externals)
+    "globals": {
+        "AMap": true,
+        "AMapUI": true,
+        "GMap": true,
+        "_": true,
+        "IMU": true,
+        "moment": true,
+        "PropTypes": true,
+        "React": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "legacyDecorators": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-restricted-syntax": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "import/no-unresolved": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/forbid-prop-types": "off",
+        // 4个空格缩进
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            4
+        ],
+        // 对象字面量中末尾不许有逗号
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        // 要求在语句末尾使用分号
+        "semi": [
+            "error",
+            "always"
+        ],
+        // 允许每个文件有多个组件定义
+        "react/no-multi-comp": "off",
+        // 不允许bind，但允许箭头函数
+        "react/jsx-no-bind": [
+            "error",
+            {
+                "allowArrowFunctions": true,
+                "allowBind": false
+            }
+        ],
+        // 字符串最大长度100，忽略url
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "tabWidth": 4,
+                "ignoreUrls": true
+            }
+        ],
+        // 嵌套三元表达式 警告
+        "no-nested-ternary": [
+            "warn"
+        ],
+        // ++/-- 只允许在for循环里面用
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ]
+    }
+}

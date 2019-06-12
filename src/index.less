@@ -1,0 +1,97 @@
+// 引入默认样式
+@import '~antd/dist/antd.less';
+
+body {
+    background: @body-background;
+    font-size: @font-size-M;
+    color: @text-color;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+p+p {
+    margin-top: @padding-xs;
+}
+
+// 以下为全局类
+
+.ant-message {
+    top: 40% !important;
+
+    .ant-message-notice-content {
+        min-width: 60px;
+        max-width: 500px;
+        width: auto;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border: none;
+        padding: @padding-md @padding-lg;
+        line-height: 18px;
+        text-align: center;
+
+        i {
+            font-size: 14px;
+        }
+    }
+
+    .ant-message-custom-content {
+        border: none;
+        padding: 0;
+        width: auto;
+    }
+}
+
+.ant-btn-link {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+}
+
+.redcliff-dirtag {
+    background: @dir-color;
+    border-color: @dir-color;
+    color: #fff;
+
+    &:hover {
+        background: lighten(@dir-color, .2);
+        border-color: lighten(@dir-color, .2);
+        color: #fff;
+    }
+}
+
+.redcliff-doctag {
+    background: @doc-color;
+    border-color: @doc-color;
+    color: #fff;
+
+    &:hover {
+        background: lighten(@doc-color, .2);
+        border-color: lighten(@doc-color, .2);
+        color: #fff;
+    }
+}
+
+// 定义滚动条 
+// ::-webkit-scrollbar {
+//     width: 6px;
+//     height: 6px;
+//     background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-track {
+//     border-radius: 4px;
+//     background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-corner {
+//     background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     width: 6px;
+//     height: 6px;
+//     border-radius: 4px;
+//     background-color: rgba(255, 153, 1, 0.6);
+// }

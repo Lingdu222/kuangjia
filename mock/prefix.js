@@ -1,0 +1,1 @@
+module.exports = '/gulfstream/red-cliff-mock-be';
