@@ -22,6 +22,7 @@
   "dependencies": {
     "antd": "^3.11.4",
     "babel-polyfill": "^6.26.0",
+    "classname": "0.0.0",
     "fetch-detector": "^1.0.1",
     "fetch-ie8": "^1.5.0",
     "immutable": "^3.8.2",

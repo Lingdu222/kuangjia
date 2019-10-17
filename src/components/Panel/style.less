@@ -1,0 +1,48 @@
+.dmp-panel {
+    border-radius: @card-radius;
+    overflow: hidden;
+    box-shadow: @box-shadow-base;
+    margin-bottom: @padding-sm;
+    &>header {
+        position: relative;
+        padding: 0 @padding-lg;
+        background: @background-color-base;
+        line-height: @pannel-header-height;
+        height: @pannel-header-height;
+        overflow: hidden;
+        &>h3 {
+            float: left;
+            font-size: @font-size-XXXL;
+            color: @text-color-strong;
+            border-left: 4px solid @primary-color;
+            padding-left: @padding-xs;
+            line-height: 20px;
+            height: 20px;
+            margin-top: 20px;
+            &>.nova-icon {
+                margin-right: @padding-xs;
+            }
+        }
+        &>p {
+            float: left;
+            padding-left: @padding-md;
+            margin-top: 26px;
+            color: @text-color-tint;
+            font-size: @font-size-L;
+            line-height: @font-size-L;
+        }
+        &>aside {
+            float: right;
+            display: flex;
+            align-items: center;
+            height: @pannel-header-height;
+            line-height: @pannel-header-height;
+            font-size: @font-size-L;
+            color: #7D7D80;
+        }
+    }
+    &>section {
+        background: #FFFFFF;
+        padding: @padding-md @padding-lg;
+    }
+}
