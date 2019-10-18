@@ -8,16 +8,16 @@ import utils from 'HELP/utils';
 import './index.less';
 
 const imgs = [
-    { title: '图片一', img: 'http://zmage.caldis.me/imgSet/childsDream/1.jpg' },
-    { title: '图片二', img: 'http://img.mm4000.com/file/2/7d/ff204289f9_1044.jpg' },
-    { title: '图片三', img: 'http://zmage.caldis.me/imgSet/childsDream/2.jpg' },
-    { title: '图片四', img: 'https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg' },
-    { title: '图片五', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
-    { title: '图片六', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
-    { title: '图片七', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
-    { title: '图片八', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
-    { title: '图片八', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
-    { title: '图片八', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' }
+    { title: '图片一', href: 'http://zmage.caldis.me/imgSet/childsDream/1.jpg' },
+    { title: '图片二', href: 'http://img.mm4000.com/file/2/7d/ff204289f9_1044.jpg' },
+    { title: '图片三', href: 'http://zmage.caldis.me/imgSet/childsDream/2.jpg' },
+    { title: '图片四', href: 'https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg' },
+    { title: '图片五', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
+    { title: '图片六', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
+    { title: '图片七', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
+    { title: '图片八', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
+    { title: '图片八', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' },
+    { title: '图片八', href: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' }
 ];
 
 
@@ -84,7 +84,7 @@ export default class MyModule extends Component {
                                             moduleGroup.map((module, i) => (
                                                 <li key={i} className="content-container-all-item-card">
                                                     <div className="content-container-all-item-card-title">{module.title}</div>
-                                                    <img className="content-container-all-item-card-img" src={module.img} alt="" />
+                                                    <img className="content-container-all-item-card-img" src={module.href} alt="" />
                                                 </li>
                                             ))
                                         }
