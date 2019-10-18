@@ -12,7 +12,7 @@
 const NAV_MAP = {
     lunbotu: {
         title: '轮播图库',
-        icon: 'phone',
+        icon: 'picture',
         redirectTo: 'lunbotu'
         // children: {
         //     hotelManage: {
@@ -27,7 +27,7 @@ const NAV_MAP = {
     },
     tabes: {
         title: 'Tabs库',
-        icon: 'phone'
+        icon: 'desktop'
         // children: {
         //     hotelManage: {
         //         title: '酒店管理',
