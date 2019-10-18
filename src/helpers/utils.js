@@ -136,7 +136,7 @@ Utils.getInheritChain = ({ list, findId, fatherIds = [] }) => {
     }
     return [];
 };
-
+// 把一个数组data，以number个为一项拆分为二维数组
 Utils.group = (data, number) => {
     const ModuleArray = [];
     for (let j = 0; j < Math.ceil(data.length / number); j += 1) {
