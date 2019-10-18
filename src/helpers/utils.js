@@ -137,4 +137,11 @@ Utils.getInheritChain = ({ list, findId, fatherIds = [] }) => {
     return [];
 };
 
+Utils.group = (data, number) => {
+    const ModuleArray = [];
+    for (let j = 0; j < Math.ceil(data.length / number); j += 1) {
+        ModuleArray.push(data.slice(0 + j * number, 0 + (j + 1) * number));
+    }
+    return ModuleArray;
+};
 export default Utils;

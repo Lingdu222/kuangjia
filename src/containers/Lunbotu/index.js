@@ -3,7 +3,8 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Icon } from 'antd';
-
+import classname from 'classname';
+import utils from 'HELP/utils';
 import './index.less';
 
 const imgs = [
@@ -19,13 +20,7 @@ const imgs = [
     { title: '图片八', img: 'http://img95.699pic.com/photo/50055/5642.jpg_wh300.jpg' }
 ];
 
-function group(number) {
-    const ModuleArray = [];
-    for (let j = 0; j < Math.ceil(imgs.length / number); j += 1) {
-        ModuleArray.push(imgs.slice(0 + j * number, 0 + (j + 1) * number));
-    }
-    return ModuleArray;
-}
+
 export default class MyModule extends Component {
     state = {
         left: 0
@@ -42,7 +37,7 @@ export default class MyModule extends Component {
 
     handleClickRight = () => {
         const { left } = this.state;
-        const myModuleArray = group(4);
+        const myModuleArray = utils.group(imgs, 4);
         const len = myModuleArray.length;
         if (left < len - 1) {
             this.setState({
@@ -51,26 +46,30 @@ export default class MyModule extends Component {
         }
     }
 
+    handleClickFooterPage = (page) => {
+        this.setState({
+            left: page
+        });
+    }
+
 
     render() {
         const { left } = this.state;
-        const myModuleArray = group(4);
+        const myModuleArray = utils.group(imgs, 4);
         const len = myModuleArray.length;
 
         return (
             <div id="wrapper">
                 <div className="content">
                     {
-                        len > 1 && left > 0
-                        && (
+                        len > 1 && left > 0 && (
                             <div className="content-left" onClick={this.handleClickLeft}>
                                 <Icon className="content-left-icon" type="left" />
                             </div>
                         )
                     }
                     {
-                        len > 1 && left < len - 1
-                        && (
+                        len > 1 && left < len - 1 && (
                             <div className="content-right" onClick={this.handleClickRight}>
                                 <Icon className="content-right-icon" type="right" />
                             </div>
@@ -84,10 +83,8 @@ export default class MyModule extends Component {
                                         {
                                             moduleGroup.map((module, i) => (
                                                 <li key={i} className="content-container-all-item-card">
-                                                    <div className="content-container-all-item-card-inner">
-                                                        <div className="content-container-all-item-card-inner-title">{module.title}</div>
-                                                        <img className="content-container-all-item-card-inner-img" src={module.img} alt="" />
-                                                    </div>
+                                                    <div className="content-container-all-item-card-title">{module.title}</div>
+                                                    <img className="content-container-all-item-card-img" src={module.img} alt="" />
                                                 </li>
                                             ))
                                         }
@@ -96,6 +93,25 @@ export default class MyModule extends Component {
                             }
                         </div>
                     </div>
+                    {
+                        len > 1 && (
+                            <ul className="content-footer">
+                                {
+                                    myModuleArray.map((item, i) => {
+                                        const footerPageCls = classname({
+                                            'content-footer-page-item': true,
+                                            active: i === left
+                                        });
+                                        return (
+                                            <li key={i} className="content-footer-page" onClick={() => { this.handleClickFooterPage(i); }}>
+                                                <div className={footerPageCls} />
+                                            </li>
+                                        );
+                                    })
+                                }
+                            </ul>
+                        )
+                    }
                 </div>
             </div>
         );
