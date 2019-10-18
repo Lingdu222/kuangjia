@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { Icon } from 'antd';
 import classname from 'classname';
 import utils from 'HELP/utils';
-import './index.less';
 
 const imgs = [
     { title: '图片一', href: 'http://zmage.caldis.me/imgSet/childsDream/1.jpg' },
