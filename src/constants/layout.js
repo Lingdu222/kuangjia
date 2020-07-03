@@ -10,62 +10,76 @@
  * icon: (非必填) 选用ant-design的icon https://ant.design/components/icon-cn/
 */
 const NAV_MAP = {
-    lunbotu: {
-        title: '轮播图库',
-        icon: 'picture',
-        redirectTo: 'lunbotu'
-        // children: {
-        //     hotelManage: {
-        //         title: '酒店管理',
-        //         icon: 'bank'
-        //     },
-        //     accountManage: {
-        //         title: '账号管理',
-        //         icon: 'team'
-        //     }
-        // }
-    },
-    tabes: {
-        title: 'Tabs库',
-        icon: 'desktop'
-        // children: {
-        //     hotelManage: {
-        //         title: '酒店管理',
-        //         icon: 'bank'
-        //     },
-        //     accountManage: {
-        //         title: '账号管理',
-        //         icon: 'team'
-        //     }
-        // }
-    }
-};
+  lunbotu: {
+    title: '轮播图库',
+    icon: 'picture',
+    redirectTo: 'lunbotu'
+    // children: {
+    //     hotelManage: {
+    //         title: '酒店管理',
+    //         icon: 'bank'
+    //     },
+    //     accountManage: {
+    //         title: '账号管理',
+    //         icon: 'team'
+    //     }
+    // }
+  },
+  tabes: {
+    title: 'Tabs库',
+    icon: 'desktop'
+    // children: {
+    //     hotelManage: {
+    //         title: '酒店管理',
+    //         icon: 'bank'
+    //     },
+    //     accountManage: {
+    //         title: '账号管理',
+    //         icon: 'team'
+    //     }
+    // }
+  },
+  tabeses: {
+    title: '嵌套表格',
+    icon: 'desktop'
+    // children: {
+    //     hotelManage: {
+    //         title: '酒店管理',
+    //         icon: 'bank'
+    //     },
+    //     accountManage: {
+    //         title: '账号管理',
+    //         icon: 'team'
+    //     }
+    // }
+  }
+}
 
 const getNavs = ({ data }) => _.pickBy(
-    _.mapValues(data, (item) => {
-        // 如果有权限点控制，则默认不展示菜单且权限为false
-        if (item.authPoints) {
-            _.set(item, 'isAuth', false);
-            _.set(item, 'isHideThisMenu', true);
-        } else {
-            _.set(item, 'isAuth', true);
-        }
+  _.mapValues(data, (item) => {
+    // 如果有权限点控制，则默认不展示菜单且权限为false
+    if (item.authPoints) {
+      _.set(item, 'isAuth', false)
+      _.set(item, 'isHideThisMenu', true)
+    } else {
+      _.set(item, 'isAuth', true)
+    }
 
-        if (item.children) {
-            _.set(
-                item,
-                'children',
-                getNavs({ data: item.children })
-            );
-        }
+    if (item.children) {
+      _.set(
+        item,
+        'children',
+        getNavs({ data: item.children })
+      )
+    }
 
-        return item;
-    }),
-    _.isObject
-);
+    return item
+  }),
+  _.isObject
+)
 
 export default {
-    title: 'COCO',
-    defaultRoute: '/lunbotu',
-    nav: getNavs({ data: NAV_MAP })
-};
+  title: 'COCO',
+  defaultRoute: '/lunbotu',
+  nav: getNavs({ data: NAV_MAP })
+}
