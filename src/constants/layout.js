@@ -1,3 +1,4 @@
+import _ from 'lodash'
 /*
  * 字段说明
  * routeConfig: (非必填，默认值为{exact:true,path:key值生成树})router配置对象，详见 https://reacttraining.com/react-router/web/api/Route
@@ -40,7 +41,7 @@ const NAV_MAP = {
     // }
   },
   tabeses: {
-    title: '嵌套表格',
+    title: '动态添加form表单项',
     icon: 'desktop'
     // children: {
     //     hotelManage: {
