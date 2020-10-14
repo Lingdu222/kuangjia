@@ -1,8 +1,10 @@
+import React, { PureComponent } from 'react'
+
 let timer
 export default ({
   // 默认每一分钟自动保存
   interval = 60000
-} = {}) => WrapComp => class extends React.PureComponent {
+} = {}) => WrapComp => class extends PureComponent {
   componentDidMount () {
     this.onSave(true)
   }

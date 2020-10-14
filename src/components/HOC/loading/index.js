@@ -1,13 +1,14 @@
+import React, { PureComponent } from 'react'
 import { Spin } from 'antd'
 
-export default WrapComp => class extends React.PureComponent {
+export default WrapComp => class extends PureComponent {
     static defaultProps = {
       loading: false
     }
 
-    static propTypes = {
-      loading: PropTypes.bool
-    }
+    // static propTypes = {
+    //   loading: PropTypes.bool
+    // }
 
     render () {
       const { loading } = this.props
